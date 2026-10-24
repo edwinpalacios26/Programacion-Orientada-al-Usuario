@@ -1,0 +1,131 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #1a1a1a;
+}
+
+
+.login-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+.brand-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+
+.login-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+.login-subtitle {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 32px;
+}
+
+
+.input-group {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+.input-field {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 2px solid #b3b3ff;
+    border-radius: 8px;
+    outline: none;
+    color: #333333;
+}
+
+.input-field::placeholder {
+    color: #b3b3b3;
+}
+
+
+.method-label {
+    font-size: 12px;
+    color: #888888;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: background-color 0.2s ease;
+}
+
+
+.btn-whatsapp {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1e293b;
+}
+
+
+.btn-sms {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.btn-sms:hover {
+    background-color: #cbd5e1;
+}
+
+
+.help-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #666666;
+    text-decoration: none;
+}
+
+.help-link:hover {
+    text-decoration: underline;
+}
