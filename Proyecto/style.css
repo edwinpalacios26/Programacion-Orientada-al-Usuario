@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +6,17 @@
 }
 
 body {
+    background-color: #f3f4f6;
+    color: #1a1a1a;
+}
+
+.login-page-body {
     background-color: #f8fafd;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #1a1a1a;
 }
-
 
 .login-container {
     background-color: #ffffff;
@@ -23,8 +25,8 @@ body {
     padding: 40px 30px;
     border-radius: 12px;
     text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
-
 
 .brand-title {
     font-size: 24px;
@@ -34,20 +36,17 @@ body {
     text-transform: uppercase;
 }
 
-
 .login-title {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 8px;
 }
 
-
 .login-subtitle {
     font-size: 14px;
     color: #666666;
     margin-bottom: 32px;
 }
-
 
 .input-group {
     text-align: left;
@@ -60,7 +59,6 @@ body {
     font-weight: 600;
     margin-bottom: 8px;
 }
-
 
 .input-field {
     width: 100%;
@@ -76,14 +74,12 @@ body {
     color: #b3b3b3;
 }
 
-
 .method-label {
     font-size: 12px;
     color: #888888;
     text-align: left;
     margin-bottom: 12px;
 }
-
 
 .btn {
     width: 100%;
@@ -97,7 +93,6 @@ body {
     transition: background-color 0.2s ease;
 }
 
-
 .btn-whatsapp {
     background-color: #0f172a;
     color: #ffffff;
@@ -107,7 +102,6 @@ body {
     background-color: #1e293b;
 }
 
-
 .btn-sms {
     background-color: #e2e8f0;
     color: #334155;
@@ -116,7 +110,6 @@ body {
 .btn-sms:hover {
     background-color: #cbd5e1;
 }
-
 
 .help-link {
     display: inline-block;
@@ -128,4 +121,120 @@ body {
 
 .help-link:hover {
     text-decoration: underline;
+}
+
+
+
+.menu-btn, .search-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #4b5563;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.location {
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.btn-tickets {
+    background-color: #4f46e5;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.main-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 32px 24px;
+}
+
+.event-card {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-color: #374151;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-tag {
+    font-size: 11px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.card-location {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.card-date {
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 500;
 }
