@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <h1> Inventario</h1>
+
+    
+        <div class="seccion-formulario">
+            <h2>Registrar Nuevo Perfume</h2>
+            <form id="formulario-producto">
+                <div class="grupo-campo">
+                    <label for="nombre">Fragancia / Marca:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Bleu de Chanel">
+                </div>
+                <div class="grupo-campo">
+                    <label for="categoria">Familia Olfativa:</label>
+                    <input type="text" id="categoria" name="categoria" placeholder="Ej: Amaderada">
+                </div>
+                <div class="grupo-campo">
+                    <label for="cantidad">Frascos en Stock:</label>
+                    <input type="number" id="cantidad" name="cantidad">
+                </div>
+                <div class="grupo-campo">
+                    <label for="precio">Precio Público ($):</label>
+                    <input type="number" id="precio" name="precio" step="0.01">
+                </div>
+                <button type="submit" id="btn-guardar">Agregar Perfume</button>
+            </form>
+         
+            <p id="mensaje-error" class="oculto"></p>
+        </div>
+
+   
+        <div class="seccion-filtros">
+            <label for="filtro-categoria">Filtrar por Familia Olfativa:</label>
+            <select id="filtro-categoria">
+                <option value="todas">Todas las familias</option>
+            </select>
+        </div>
+
+     
+        <div class="panel-indicadores">
+            <div class="tarjeta-indicador">
+                <h3>Tipos de Fragancia</h3>
+                <p id="total-productos">0</p>
+            </div>
+            <div class="tarjeta-indicador">
+                <h3>Total de Frascos</h3>
+                <p id="total-unidades">0</p>
+            </div>
+            <div class="tarjeta-indicador">
+                <h3>Valor del Inventario</h3>
+                <p id="valor-total">$0.00</p>
+            </div>
+            <div class="tarjeta-indicador">
+                <h3>Fragancias Agotadas</h3>
+                <p id="total-agotados">0</p>
+            </div>
+        </div>
+
+    
+        <div class="seccion-tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fragancia</th>
+                        <th>Familia Olfativa</th>
+                        <th>Frascos</th>
+                        <th>Precio Unitario</th>
+                        <th>Valor Stock</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-inventario">
+                
+                </tbody>
+            </table>
+            <p id="mensaje-vacio" class="oculto"> No hay perfumes registrados en esta categoría.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

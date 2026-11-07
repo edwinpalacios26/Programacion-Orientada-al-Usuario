@@ -1,0 +1,246 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #fcfcfc;
+  color: #111111;           
+  margin: 0;
+  padding: 20px;
+}
+
+.contenedor-principal {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 4px; 
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  border-top: 6px solid #da251d; 
+}
+
+h1, h2 {
+  color: #111111;
+  font-weight: 400; 
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+
+.seccion-formulario {
+  background: #fafafa;
+  border: 1px solid #eeeeee;
+  padding: 25px;
+  border-radius: 0px;
+  margin-bottom: 35px;
+}
+
+#formulario-producto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo-campo label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  color: #555555;
+}
+
+.grupo-campo input {
+  padding: 11px;
+  border: 1px solid #dddddd;
+  border-radius: 0px; 
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.grupo-campo input:focus {
+  border-color: #da251d;
+}
+
+
+button[type="submit"] {
+  padding: 12px;
+  background-color: #111111; 
+  color: #ffffff;
+  border: none;
+  border-radius: 0px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #da251d; 
+}
+
+
+#mensaje-error {
+  color: #da251d;
+  background: #fff5f5;
+  border-left: 3px solid #da251d;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+.seccion-filtros {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+#filtro-categoria {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 0px;
+  border: 1px solid #cccccc;
+  background: white;
+  outline: none;
+}
+
+#filtro-categoria:focus {
+  border-color: #da251d;
+}
+
+.panel-indicadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.tarjeta-indicador {
+  background: #000000; 
+  border: 1px solid #f0e9df; 
+  padding: 20px;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.tarjeta-indicador h3 {
+  margin: 0 0 8px 0;
+  font-size: 11px;
+  color: #8a7355;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tarjeta-indicador p {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 300; 
+  color: #ffffff;
+}
+
+
+.seccion-tabla {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 14px;
+}
+
+th {
+  background-color: #111111; 
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+
+.fila-agotado {
+  background-color: #fff9f9;
+  color: #da251d; 
+}
+
+
+.btn-estado {
+  padding: 6px 14px;
+  background-color: #f0f0f0;
+  color: #333333;
+  border: 1px solid #dddddd;
+  border-radius: 0px;
+  cursor: pointer;
+  margin-right: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-estado:hover {
+  background-color: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.btn-eliminar {
+  padding: 6px 14px;
+  background-color: transparent;
+  color: #da251d;
+  border: 1px solid #da251d; 
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-eliminar:hover {
+  background-color: #da251d;
+  color: #ffffff;
+}
+
+/* Estado sin resultados */
+#mensaje-vacio {
+  text-align: center;
+  padding: 30px;
+  color: #da251d;
+  background: #fff5f5;
+  border: 1px dashed #da251d;
+  border-radius: 0px;
+  font-size: 14px;
+}
+
+.oculto {
+  display: none !important;
+}
