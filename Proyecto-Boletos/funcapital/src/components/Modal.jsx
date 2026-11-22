@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-export default function Modal({ isOpen, onClose, title, children }) {
-  useEffect(() => {
+export default function Modal({ isOpen, onClose, title, children }) {  // ventana emergente 
+  useEffect(() => {  // tecla escape para cerrar la ventana emergente
     if (!isOpen) return;
     const handleKey = (e) => {
       if (e.key === 'Escape') onClose();

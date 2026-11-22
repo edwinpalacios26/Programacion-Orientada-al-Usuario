@@ -58,7 +58,7 @@ export default function AuthProfileView({ currentUser, onLogin, onUpdateUser }) 
 
           <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '1.25rem' }}>
             <label htmlFor="role-switcher" style={{ display: 'block', fontWeight: 700, marginBottom: '0.5rem' }}>
-              Cambiar rol visual de demostración (Rúbrica Módulo 1):
+              Cambiar rol visual de demostración:
             </label>
             <select
               id="role-switcher"

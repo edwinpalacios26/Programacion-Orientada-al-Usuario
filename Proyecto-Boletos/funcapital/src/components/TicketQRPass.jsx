@@ -1,5 +1,5 @@
 export default function TicketQRPass({ order }) {
-  // Genera una matriz determinística 9x9 a partir del ID de la orden
+ 
   const seed = order.id.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
   const cells = Array.from({ length: 81 }, (_, idx) => {
     const r = Math.floor(idx / 9);

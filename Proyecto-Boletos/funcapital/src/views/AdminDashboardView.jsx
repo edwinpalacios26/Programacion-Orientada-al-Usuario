@@ -15,7 +15,7 @@ export default function AdminDashboardView({ events, orders, onToggleEventStatus
   return (
     <main className="container" style={{ paddingTop: '2rem' }}>
       <header style={{ marginBottom: '1.5rem' }}>
-        <h1 style={{ fontSize: '1.75rem', fontWeight: 800 }}>Panel de Administración y Analítica</h1>
+        <h1 style={{ fontSize: '1.75rem', fontWeight: 800 }}> Administración </h1>
         <p style={{ color: 'var(--text-muted)' }}>
           Gestión de inventario, eventos, usuarios y reportes de ventas de FunCapital.
         </p>
@@ -23,7 +23,7 @@ export default function AdminDashboardView({ events, orders, onToggleEventStatus
 
       {}
       <section
-        aria-label="Indicadores clave"
+        aria-label="Indicadores"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
@@ -58,7 +58,7 @@ export default function AdminDashboardView({ events, orders, onToggleEventStatus
           className={`btn ${adminTab === 'reports' ? 'btn-primary' : 'btn-outline'}`}
           onClick={() => setAdminTab('reports')}
         >
-          Reportes y Analítica
+          Reportes 
         </button>
         <button
           type="button"

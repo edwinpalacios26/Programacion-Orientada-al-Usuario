@@ -37,7 +37,7 @@ export default function Navbar({
               Mis tickets
             </button>
 
-            {(currentUser?.role === 'administrador' || currentUser?.role === 'organizador') && (
+            {(currentUser?.role === 'administrador' || currentUser?.role === 'organizador') && ( 
               <button
                 type="button"
                 className={`nav-link ${currentView === 'admin' ? 'active' : ''}`}
@@ -72,7 +72,7 @@ export default function Navbar({
                 className={`nav-link ${currentView === 'profile' ? 'active' : ''}`}
                 onClick={() => onNavigate('profile')}
               >
-                👤 {currentUser.name.split(' ')[0]}
+                 {currentUser.name.split(' ')[0]}
               </button>
               <button type="button" className="btn btn-outline" onClick={onLogout}>
                 Salir
