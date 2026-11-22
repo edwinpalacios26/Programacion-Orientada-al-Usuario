@@ -1,5 +1,11 @@
 import './Navbar.css';
 
+const ROLE_LABELS = {
+  cliente: 'Cliente',
+  administrador: 'Administrador',
+  organizador: 'Organizador'
+};
+
 export default function Navbar({
   currentView,
   onNavigate,
@@ -72,7 +78,7 @@ export default function Navbar({
                 className={`nav-link ${currentView === 'profile' ? 'active' : ''}`}
                 onClick={() => onNavigate('profile')}
               >
-                👤 {currentUser.name.split(' ')[0]}
+                👤 {ROLE_LABELS[currentUser.role]}
               </button>
               <button type="button" className="btn btn-outline" onClick={onLogout}>
                 Salir
