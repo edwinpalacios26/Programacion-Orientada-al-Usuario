@@ -78,17 +78,21 @@ export const fakeApi = {
   },
 
   async saveEvent(eventData) {
+    const fallbackImage = 'https://unsplash.com';
+    const cleanImage = eventData.image && eventData.image.trim() !== '' ? eventData.image.trim() : fallbackImage;
+
     if (eventData.id) {
-      return this.updateEvent(eventData.id, eventData);
+      return this.updateEvent(eventData.id, { ...eventData, image: cleanImage });
     }
     return this.createEvent({
       ...eventData,
-      image: eventData.image || 'images/arjona.jpg',
+      image: cleanImage,
       city: eventData.city || 'San Salvador',
       date: eventData.date || '2026-12-15',
       serviceFeeRate: eventData.serviceFeeRate ?? 0.1
     });
   },
+
 
   async updateEvent(eventId, updates) {
     await simulateNetwork(null, 250);

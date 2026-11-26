@@ -249,7 +249,7 @@ export default function AdminDashboardView() {
               <div>
               <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600 }}>URL de imagen de portada</label>
               <input
-                type="url"
+                type="text"
                 placeholder="https://ejemplo.com"
                 value={eventForm.image}
                 onChange={(e) => setEventForm({ ...eventForm, image: e.target.value })}
