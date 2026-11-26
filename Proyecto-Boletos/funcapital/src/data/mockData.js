@@ -191,3 +191,30 @@ export const INITIAL_ORDERS = [
     createdAt: '2026-10-01'
   }
 ];
+
+export const MOCK_USERS = [
+  {
+    id: 'usr-1',
+    name: 'Cliente Autorizado UCA',
+    phone: '+503 7000-0000',
+    email: 'estudiante@uca.edu.sv',
+    dui: '05489210-4',
+    role: 'cliente'
+  },
+  {
+    id: 'usr-2',
+    name: 'Admin FunCapital',
+    phone: '+503 7111-1111',
+    email: 'admin@funcapital.sv',
+    dui: '01234567-8',
+    role: 'administrador'
+  },
+  {
+    id: 'usr-3',
+    name: 'Productora La Constancia',
+    phone: '+503 7222-2222',
+    email: 'eventos@laconstancia.sv',
+    dui: '09876543-2',
+    role: 'organizador'
+  }
+];
