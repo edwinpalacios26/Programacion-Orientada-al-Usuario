@@ -10,7 +10,7 @@ export const INITIAL_EVENTS = [
     city: 'Santa Tecla',
     status: 'Disponible',
     serviceFeeRate: 0.20,
-    image: '/images/oktoberfest.jpg',
+    image: 'images/oktoberfest.jpg',
     zones: [
       { id: 'z-okt-1', name: 'Entrada General - Jueves 15 Oct', price: 5.00, available: 120 },
       { id: 'z-okt-2', name: 'Entrada General - Viernes 16 Oct', price: 10.00, available: 85 },
@@ -28,7 +28,7 @@ export const INITIAL_EVENTS = [
     city: 'San Salvador',
     status: 'Últimos boletos',
     serviceFeeRate: 0.066,
-    image: '/images/def-leppard.jpg',
+    image: 'images/def-leppard.jpg',
     zones: [
       { id: 'z-def-1', name: 'General Preferencial', price: 65.00, available: 45 },
       { id: 'z-def-2', name: 'Tribuna Norte / Sur', price: 125.00, available: 22 },
@@ -46,7 +46,7 @@ export const INITIAL_EVENTS = [
     city: 'San Salvador',
     status: 'Disponible',
     serviceFeeRate: 0.10,
-    image: '/images/tour-cervecero.jpg',
+    image: 'images/tour-cervecero.jpg',
     zones: [
       { id: 'z-tour-1', name: 'Pase Recorrido Clásico', price: 12.00, available: 40 },
       { id: 'z-tour-2', name: 'Pase Cata Maestro Cervecero', price: 22.00, available: 15 },
@@ -64,7 +64,7 @@ export const INITIAL_EVENTS = [
     city: 'San Salvador',
     status: 'Disponible',
     serviceFeeRate: 0.10,
-    image: '/images/vivit.jpg',
+    image: 'images/vivit.jpg',
     zones: [
       { id: 'z-viv-1', name: 'Entrada Juvenil (15-30 años)', price: 8.00, available: 200 },
       { id: 'z-viv-2', name: 'Acceso General', price: 12.00, available: 150 },
@@ -82,7 +82,7 @@ export const INITIAL_EVENTS = [
     city: 'San Salvador',
     status: 'Disponible',
     serviceFeeRate: 0.10,
-    image: '/images/legado-moda.jpg',
+    image: 'images/legado-moda.jpg',
     zones: [
       { id: 'z-leg-1', name: 'Plata General', price: 30.00, available: 60 },
       { id: 'z-leg-2', name: 'Oro Pasarela', price: 50.00, available: 30 },
@@ -100,7 +100,7 @@ export const INITIAL_EVENTS = [
     city: 'San Salvador',
     status: 'Últimos boletos',
     serviceFeeRate: 0.10,
-    image: '/images/arjona.jpg',
+    image: 'images/arjona.jpg',
     zones: [
       { id: 'z-arj-1', name: 'Sombra Sur / Norte', price: 55.00, available: 30 },
       { id: 'z-arj-2', name: 'Platea Central', price: 115.00, available: 14 },
@@ -118,7 +118,7 @@ export const INITIAL_EVENTS = [
     city: 'San Salvador',
     status: 'Disponible',
     serviceFeeRate: 0.10,
-    image: '/images/heroes.jpg',
+    image: 'images/heroes.jpg',
     zones: [
       { id: 'z-her-1', name: 'Barra General', price: 10.00, available: 50 },
       { id: 'z-her-2', name: 'Mesa Terraza', price: 18.00, available: 24 },
@@ -136,7 +136,7 @@ export const INITIAL_EVENTS = [
     city: 'San Salvador',
     status: 'Agotado',
     serviceFeeRate: 0.10,
-    image: '/images/euphoria.jpg',
+    image: 'images/euphoria.jpg',
     zones: [
       { id: 'z-eup-1', name: 'Dancefloor Early Bird', price: 15.00, available: 0 },
       { id: 'z-eup-2', name: 'Backstage Pass', price: 35.00, available: 0 },
@@ -145,7 +145,7 @@ export const INITIAL_EVENTS = [
   }
 ];
 
-export const MOCK_USERS = [
+export const images = [
   {
     id: 'usr-1',
     name: 'Cliente Autorizado UCA',
@@ -179,7 +179,7 @@ export const INITIAL_ORDERS = [
     eventTitle: 'Oktoberfest Pilsener 2026',
     venue: 'Parque Deportivo El Cafetalón, Santa Tecla',
     displayDate: 'Sábado 17 de Octubre, 07:00 PM',
-    image: '/images/oktoberfest.jpg',
+    image: 'images/oktoberfest.jpg',
     zoneName: 'General',
     quantity: 1,
     unitPrice: 5.00,
