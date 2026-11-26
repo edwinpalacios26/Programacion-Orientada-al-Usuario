@@ -11,7 +11,7 @@ const EMPTY_EVENT_FORM = {
   status: 'Disponible',
   venue: 'Complejo Cuscatlán, San Salvador',
   displayDate: 'Próximamente • 8:00 PM',
-  image: 'https://unsplash.com',
+  image: '',
   generalPrice: 35,
   generalAvailable: 100
 };
@@ -115,6 +115,7 @@ export default function AdminDashboardView() {
       status: ev.status,
       venue: ev.venue,
       displayDate: ev.displayDate,
+      image: ev.image || '',
       generalPrice: ev.zones[0]?.price || 35,
       generalAvailable: ev.zones[0]?.available || 100
     });
