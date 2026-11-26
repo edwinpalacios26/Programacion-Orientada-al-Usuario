@@ -1,3 +1,8 @@
+# Entrega numero 3 Final 
+
+
+
+
 # FunCapital El Salvador — Sitio de compra de boletos
 
 Aplicación web frontend desarrollada con **React 19** y **Vite 8** para la exploración de eventos, selección de localidades, compra simulada en 4 pasos, emisión de pases digitales con código QR y administración de inventario y reportes en El Salvador.
