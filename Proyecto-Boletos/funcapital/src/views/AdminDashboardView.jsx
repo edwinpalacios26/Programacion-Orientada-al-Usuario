@@ -32,14 +32,16 @@ export default function AdminDashboardView() {
   const isAdmin = currentUser?.role === 'administrador';
 
 
+
   const metrics = useMemo(() => {
-    const totalRevenue = orders.reduce((acc, o) => acc + o.total, 0);
+    const totalRevenue = orders.reduce((acc, o) => acc + (Number(o.total) || 0), 0);
     const totalTicketsSold = orders.reduce(
-      (acc, o) => acc + o.items.reduce((sum, i) => sum + i.quantity, 0),
+      (acc, o) =>
+        acc + (Array.isArray(o.items) ? o.items.reduce((sum, i) => sum + i.quantity, 0) : Number(o.quantity) || 1),
       0
     );
     const totalAvailableSeats = events.reduce(
-      (acc, ev) => acc + ev.zones.reduce((sum, z) => sum + z.available, 0),
+      (acc, ev) => acc + (ev.zones || []).reduce((sum, z) => sum + (Number(z.available) || 0), 0),
       0
     );
     return { totalRevenue, totalTicketsSold, totalAvailableSeats };
@@ -49,7 +51,7 @@ export default function AdminDashboardView() {
   const reportSummaryByEvent = useMemo(() => {
     const filteredOrders = orders.filter((order) => {
       if (reportEventId !== 'ALL' && order.eventId !== reportEventId) return false;
-      if (reportDateFrom && order.createdAt.slice(0, 10) < reportDateFrom) return false;
+      if (reportDateFrom && order.createdAt && order.createdAt.slice(0, 10) < reportDateFrom) return false;
       return true;
     });
 
@@ -58,12 +60,15 @@ export default function AdminDashboardView() {
       if (!grouped[order.eventTitle]) {
         grouped[order.eventTitle] = { title: order.eventTitle, tickets: 0, revenue: 0 };
       }
-      const qty = order.items.reduce((s, i) => s + i.quantity, 0);
+      const qty = Array.isArray(order.items)
+        ? order.items.reduce((s, i) => s + i.quantity, 0)
+        : Number(order.quantity) || 1;
       grouped[order.eventTitle].tickets += qty;
-      grouped[order.eventTitle].revenue += order.total;
+      grouped[order.eventTitle].revenue += Number(order.total) || 0;
     });
     return Object.values(grouped);
   }, [orders, reportEventId, reportDateFrom]);
+
 
   const maxRevenue = Math.max(...reportSummaryByEvent.map((r) => r.revenue), 1);
 
