@@ -77,6 +77,19 @@ export const fakeApi = {
     return created;
   },
 
+  async saveEvent(eventData) {
+    if (eventData.id) {
+      return this.updateEvent(eventData.id, eventData);
+    }
+    return this.createEvent({
+      ...eventData,
+      image: eventData.image || 'images/arjona.jpg',
+      city: eventData.city || 'San Salvador',
+      date: eventData.date || '2026-12-15',
+      serviceFeeRate: eventData.serviceFeeRate ?? 0.1
+    });
+  },
+
   async updateEvent(eventId, updates) {
     await simulateNetwork(null, 250);
     const events = getStoredEvents();
@@ -148,7 +161,7 @@ export const fakeApi = {
     await simulateNetwork(signal, 200);
     const saved = loadFromStorage(KEYS.USERS, null);
     if (saved) return saved;
-    saveToStorage(KEYS.USERS, DEMO_USERS);
-    return DEMO_USERS;
+    saveToStorage(KEYS.USERS,MOCK_USERS);
+    return MOCK_USERS;
   }
 };
