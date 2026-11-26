@@ -1,0 +1,23 @@
+{
+  "name": "Ticketera SV - Eventos y Conciertos",
+  "short_name": "TicketeraSV",
+  "description": "Plataforma de compra y gestión de entradas para eventos en El Salvador.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
