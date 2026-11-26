@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import { fakeApi } from '../api/fakeApi';
+import { useApp } from '../context/AppContext';
 import CheckoutStepper from '../components/CheckoutStepper';
 import OrderSummaryCard from '../components/OrderSummaryCard';
 import TicketQRPass from '../components/TicketQRPass';
@@ -6,19 +9,21 @@ import PaymentFormFields from '../components/PaymentFormFields';
 import { ErrorBanner, EmptyState } from '../components/StatusFeedback';
 import { formatCurrency, generateOrderCode, generateSeatCode } from '../utils/helpers';
 
-export default function CheckoutView({
-  cartItem,
-  currentUser,
-  onClearCart,
-  onCompleteOrder,
-  onNavigate
-}) {
-  const [step, setStep] = useState(2);
+export default function CheckoutView({ initialStep = 2 }) {
+  const { state, dispatch } = useApp();
+  const navigate = useNavigate();
+  const { cartItem, currentUser } = state;
+
+  const [step, setStep] = useState(initialStep);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [paymentError, setPaymentError] = useState('');
   const [simulateError, setSimulateError] = useState(false);
   const [completedOrder, setCompletedOrder] = useState(null);
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (!completedOrder) setStep(initialStep);
+  }, [initialStep, completedOrder]);
 
   const [form, setForm] = useState({
     fullName: currentUser?.name || '',
@@ -39,7 +44,7 @@ export default function CheckoutView({
           title="Tu carrito está vacío"
           description="Selecciona un evento y tus localidades para iniciar la compra."
           actionLabel="Explorar eventos"
-          onAction={() => onNavigate('home')}
+          onAction={() => navigate('/eventos')}
         />
       </main>
     );
@@ -67,21 +72,14 @@ export default function CheckoutView({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handlePaySubmit = (e) => {
+  const handlePaySubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting || !validateForm()) return;
 
     setPaymentError('');
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-
-      if (simulateError) {
-        setPaymentError('La transacción fue rechazada por el banco emisor. Verifica tus datos o intenta nuevamente.');
-        return;
-      }
-
+    try {
       const newOrder = {
         id: generateOrderCode(),
         eventId: cartItem.eventId,
@@ -97,14 +95,20 @@ export default function CheckoutView({
         total,
         seat: generateSeatCode(),
         holderName: form.fullName.trim(),
+        holderEmail: form.email.trim(),
         status: 'CONFIRMADO',
         createdAt: new Date().toISOString().slice(0, 10)
       };
 
-      onCompleteOrder(newOrder);
+      const result = await fakeApi.createOrder(newOrder, { simulateError });
+      dispatch({ type: 'COMPLETE_ORDER', payload: result });
       setCompletedOrder(newOrder);
       setStep(4);
-    }, 900);
+    } catch (err) {
+      setPaymentError(err.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -120,10 +124,14 @@ export default function CheckoutView({
               Localidad: <strong>{cartItem.zoneName}</strong> • Cantidad: <strong>{cartItem.quantity}</strong>
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
-              <button type="button" className="btn btn-primary" onClick={() => setStep(3)}>
+              <button type="button" className="btn btn-primary" onClick={() => navigate('/checkout')}>
                 Continuar al pago
               </button>
-              <button type="button" className="btn btn-outline" onClick={onClearCart}>
+              <button
+                type="button"
+                className="btn btn-outline"
+                onClick={() => dispatch({ type: 'CLEAR_CART' })}
+              >
                 Vaciar carrito
               </button>
             </div>
@@ -170,7 +178,7 @@ export default function CheckoutView({
             ✓ ¡Compra completada con éxito!
           </h1>
           <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
-            Tu orden ha sido procesada de forma segura. Guardamos tus boletos en tu perfil.
+            Confirmación simulada enviada a <strong>{completedOrder.holderEmail || 'tu correo registrado'}</strong>. Tus boletos QR ya están guardados.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', textAlign: 'left' }}>
@@ -190,8 +198,8 @@ export default function CheckoutView({
             <div>
               <TicketQRPass order={completedOrder} />
               <div style={{ textAlign: 'center', marginTop: '1.25rem' }}>
-                <button type="button" className="btn btn-primary" onClick={() => onNavigate('tickets')}>
-                  Ir a mis eventos
+                <button type="button" className="btn btn-primary" onClick={() => navigate('/boletos')}>
+                  Ir a mis boletos
                 </button>
               </div>
             </div>
