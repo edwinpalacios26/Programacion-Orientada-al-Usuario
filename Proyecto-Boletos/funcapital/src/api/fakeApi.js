@@ -1,4 +1,5 @@
 import { INITIAL_EVENTS, INITIAL_ORDERS, MOCK_USERS } from '../data/mockData';
+const delay = (ms = 250) => new Promise((resolve) => setTimeout(resolve, ms));
 
 import { loadFromStorage, saveToStorage } from '../utils/helpers';
 
