@@ -11,6 +11,7 @@ const EMPTY_EVENT_FORM = {
   status: 'Disponible',
   venue: 'Complejo Cuscatlán, San Salvador',
   displayDate: 'Próximamente • 8:00 PM',
+  image: 'https://unsplash.com',
   generalPrice: 35,
   generalAvailable: 100
 };
@@ -244,6 +245,16 @@ export default function AdminDashboardView() {
                 <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600 }}>Subtítulo</label>
                 <input type="text" value={eventForm.subtitle} onChange={(e) => setEventForm({ ...eventForm, subtitle: e.target.value })} style={{ width: '100%', padding: '0.55rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }} />
               </div>
+              <div>
+              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600 }}>URL de imagen de portada</label>
+              <input
+                type="url"
+                placeholder="https://ejemplo.com"
+                value={eventForm.image}
+                onChange={(e) => setEventForm({ ...eventForm, image: e.target.value })}
+                style={{ width: '100%', padding: '0.55rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }}
+              />
+            </div>
               <div>
                 <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600 }}>Categoría</label>
                 <select value={eventForm.category} onChange={(e) => setEventForm({ ...eventForm, category: e.target.value })} style={{ width: '100%', padding: '0.55rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }}>
