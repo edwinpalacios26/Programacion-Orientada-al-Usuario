@@ -130,14 +130,18 @@ export const fakeApi = {
   },
 
  
-  async loginWithRole(roleOrEmail) {
-    await simulateNetwork(null, 250);
-    const user = DEMO_USERS.find(
-      (u) => u.role === roleOrEmail || u.email.toLowerCase() === roleOrEmail.toLowerCase()
+  async loginWithRole(identifier) {
+    await delay(250);
+    const key = String(identifier || '').trim().toLowerCase();
+    const user = MOCK_USERS.find(
+      (u) => u.email.toLowerCase() === key || u.role.toLowerCase() === key
     );
-    if (!user) throw new Error('Credenciales de demostración no válidas.');
-    return user;
+    if (!user) {
+      throw new Error('Usuario no encontrado. Usa uno de los roles o correos de demostración.');
+    }
+    return { ...user };
   },
+
 
   async getUsers({ signal } = {}) {
     await simulateNetwork(signal, 200);
