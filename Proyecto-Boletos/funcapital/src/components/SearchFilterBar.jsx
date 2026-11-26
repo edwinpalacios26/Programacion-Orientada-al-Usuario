@@ -9,7 +9,7 @@ export default function SearchFilterBar({
 }) {
   return (
     <section
-      aria-label="Filtros de eventos"
+      aria-label="Filtros de eventos" 
       className="card"
       style={{
         padding: '1rem',

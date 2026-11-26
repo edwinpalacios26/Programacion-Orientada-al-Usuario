@@ -1,4 +1,4 @@
-export default function QuantityStepper({ quantity, max = 10, onChange }) {
+export default function QuantityStepper({ quantity, max = 10, onChange }) { // cambia la cantidad de boletos a comprar, con un maximo de 10
   return (
     <div
       role="group"

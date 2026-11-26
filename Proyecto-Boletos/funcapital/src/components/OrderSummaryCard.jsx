@@ -1,10 +1,10 @@
 import { formatCurrency } from '../utils/helpers';
 
 export default function OrderSummaryCard({ item, orderCode }) {
-  if (!item) return null;
+  if (!item) return null; 
 
   const subtotal = item.unitPrice * item.quantity;
-  const serviceFee = Number((subtotal * item.serviceFeeRate).toFixed(2));
+  const serviceFee = Number((subtotal * item.serviceFeeRate).toFixed(2)); 
   const total = subtotal + serviceFee;
 
   return (
@@ -20,7 +20,7 @@ export default function OrderSummaryCard({ item, orderCode }) {
         {orderCode && (
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <span style={{ color: 'var(--text-muted)' }}>Código de orden:</span>
-            <strong>#{orderCode}</strong>
+            <strong>#{orderCode}</strong>  
           </div>
         )}
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
