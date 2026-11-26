@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createHashRouter } from 'react-router';
 import RootLayout from './components/RootLayout';
 import ProtectedRoute from './components/ProtectedRoute';
 import HomeView from './views/HomeView';
@@ -9,7 +9,7 @@ import AuthProfileView from './views/AuthProfileView';
 import AdminDashboardView from './views/AdminDashboardView';
 import NotFoundView from './views/NotFoundView';
 
-export const router = createBrowserRouter(
+export const router = createHashRouter(
   [
     {
       path: '/',
@@ -72,8 +72,5 @@ export const router = createBrowserRouter(
         { path: '*', element: <NotFoundView /> }
       ]
     }
-  ],
-  {
-    basename: '/Programacion-Orientada-al-Usuario'
-  }
+  ]
 );
