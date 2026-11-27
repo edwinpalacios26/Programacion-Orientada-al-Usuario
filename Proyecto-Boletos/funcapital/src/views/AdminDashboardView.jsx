@@ -3,7 +3,7 @@ import { useApp } from '../context/AppContext';
 import { fakeApi } from '../api/fakeApi';
 import { formatCurrency } from '../utils/formatters';
 import { ErrorBanner } from '../components/StatusFeedback';
-
+import { MOCK_USERS } from '../data/mockData';
 const EMPTY_EVENT_FORM = {
   title: '',
   subtitle: '',
@@ -204,6 +204,15 @@ export default function AdminDashboardView() {
             Reportes Dinámicos
           </button>
         )}
+
+            <button
+          type="button"
+          className={`btn ${activeSection === 'usuarios' ? 'btn-primary' : 'btn-outline'}`}
+          onClick={() => setActiveSection('usuarios')}
+        >
+          Usuarios
+        </button>
+
       </nav>
 
       
@@ -409,6 +418,38 @@ export default function AdminDashboardView() {
           </div>
         </section>
       )}
+
+      {activeSection === 'usuarios' && (
+  <section className="card" style={{ padding: '1.25rem', overflowX: 'auto' }}>
+    <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>
+      Usuarios del Sistema ({MOCK_USERS.length})
+    </h2>
+    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem', textAlign: 'left' }}>
+      <thead>
+        <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+          <th style={{ padding: '0.6rem' }}>Nombre</th>
+          <th style={{ padding: '0.6rem' }}>Correo</th>
+          <th style={{ padding: '0.6rem' }}>Teléfono</th>
+          <th style={{ padding: '0.6rem' }}>Rol</th>
+        </tr>
+      </thead>
+      <tbody>
+        {MOCK_USERS.map((u) => (
+          <tr key={u.id} style={{ borderBottom: '1px solid var(--border-color)' }}>
+            <td style={{ padding: '0.6rem', fontWeight: 700 }}>{u.name}</td>
+            <td style={{ padding: '0.6rem' }}>{u.email}</td>
+            <td style={{ padding: '0.6rem' }}>{u.phone}</td>
+            <td style={{ padding: '0.6rem', textTransform: 'capitalize' }}>
+              <span className="badge badge-success">{u.role}</span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+)}
+
+
     </main>
   );
 }

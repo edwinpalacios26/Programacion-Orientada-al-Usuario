@@ -4,13 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+        "dev": "vite",
+    "build": "vite build && node -e \"const fs=require('fs'); fs.copyFileSync('dist/index.html','dist/404.html'); fs.writeFileSync('dist/.nojekyll','');\"",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
-
 
   },
   "dependencies": {

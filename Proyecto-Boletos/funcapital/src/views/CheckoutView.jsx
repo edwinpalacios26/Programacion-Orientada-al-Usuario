@@ -40,7 +40,7 @@ export default function CheckoutView({ initialStep = 2 }) {
     return (
       <main className="container" style={{ paddingTop: '2rem' }}>
         <EmptyState
-          icon="🛒"
+          icon=""
           title="Tu carrito está vacío"
           description="Selecciona un evento y tus localidades para iniciar la compra."
           actionLabel="Explorar eventos"
