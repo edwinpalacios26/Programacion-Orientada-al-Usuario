@@ -1,16 +1,18 @@
 import { formatCurrency } from '../utils/helpers';
 import './EventCard.css';
 
-export default function EventCard({ event, onSelectEvent }) {
-  const minPrice = Math.min(...event.zones.map((z) => z.price));
-  const isSoldOut = event.status === 'Agotado';
+//tarjeta individual para cada evento 
 
-  const badgeClass =
+export default function EventCard({ event, onSelectEvent }) {
+  const minPrice = Math.min(...event.zones.map((z) => z.price)); //calcula el precio mas bajo 
+  const isSoldOut = event.status === 'Agotado'; //guarda en si el evento esta agotado (true o false)
+
+  const badgeClass = 
     event.status === 'Disponible'
-      ? 'badge-success'
+      ? 'badge-success' //color verde
       : event.status === 'Últimos boletos'
-      ? 'badge-warning'
-      : 'badge-danger';
+      ? 'badge-warning'// color amarillo 
+      : 'badge-danger'; // color rojo 
 
   return (
     <article className="card event-card">
@@ -31,7 +33,7 @@ export default function EventCard({ event, onSelectEvent }) {
 
         <div className="event-card-footer">
           <div className="event-card-price">
-            Desde <strong>{formatCurrency(minPrice)}</strong>
+            Desde <strong>{formatCurrency(minPrice)}</strong> 
           </div>
           <button
             type="button"

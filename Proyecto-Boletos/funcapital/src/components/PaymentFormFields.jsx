@@ -1,6 +1,6 @@
-export default function PaymentFormFields({ form, errors, onChange }) {
-  const inputStyle = {
-    width: '100%',
+export default function PaymentFormFields({ form, errors, onChange }) { // dibuja los 8 campos del formulario de pago de paso 3
+  const inputStyle = { // guarda los estilos de los inputs para no repetirlos
+    width: '100%', 
     padding: '0.65rem',
     borderRadius: 'var(--radius-sm)',
     border: '1px solid var(--border-color)'
@@ -72,7 +72,7 @@ export default function PaymentFormFields({ form, errors, onChange }) {
               placeholder="00000000-0"
               style={inputStyle}
             />
-            {errors.dui && <small style={{ color: 'var(--danger)' }}>{errors.dui}</small>}
+            {errors.dui && <small style={{ color: 'var(--danger)' }}>{errors.dui}</small>} 
           </div>
         </div>
       </section>
@@ -96,7 +96,7 @@ export default function PaymentFormFields({ form, errors, onChange }) {
               placeholder="TarjetaHabiente"
               style={inputStyle}
             />
-            {errors.cardName && <small style={{ color: 'var(--danger)' }}>{errors.cardName}</small>}
+            {errors.cardName && <small style={{ color: 'var(--danger)' }}>{errors.cardName}</small>} 
           </div>
 
           <div>
@@ -112,7 +112,7 @@ export default function PaymentFormFields({ form, errors, onChange }) {
               placeholder="4000 1234 5678 9010"
               style={inputStyle}
             />
-            {errors.cardNumber && <small style={{ color: 'var(--danger)' }}>{errors.cardNumber}</small>}
+            {errors.cardNumber && <small style={{ color: 'var(--danger)' }}>{errors.cardNumber}</small>} 
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
@@ -129,7 +129,7 @@ export default function PaymentFormFields({ form, errors, onChange }) {
                 placeholder="MM/AA"
                 style={inputStyle}
               />
-              {errors.expiry && <small style={{ color: 'var(--danger)' }}>{errors.expiry}</small>}
+              {errors.expiry && <small style={{ color: 'var(--danger)' }}>{errors.expiry}</small>} 
             </div>
 
             <div>
@@ -145,7 +145,7 @@ export default function PaymentFormFields({ form, errors, onChange }) {
                 placeholder="***"
                 style={inputStyle}
               />
-              {errors.cvv && <small style={{ color: 'var(--danger)' }}>{errors.cvv}</small>}
+              {errors.cvv && <small style={{ color: 'var(--danger)' }}>{errors.cvv}</small>} 
             </div>
           </div>
         </div>
