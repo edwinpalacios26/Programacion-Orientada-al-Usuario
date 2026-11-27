@@ -72,7 +72,7 @@ export default function PaymentFormFields({ form, errors, onChange }) { // dibuj
               placeholder="00000000-0"
               style={inputStyle}
             />
-            {errors.dui && <small style={{ color: 'var(--danger)' }}>{errors.dui}</small>} //validaciones
+            {errors.dui && <small style={{ color: 'var(--danger)' }}>{errors.dui}</small>} 
           </div>
         </div>
       </section>
@@ -96,7 +96,7 @@ export default function PaymentFormFields({ form, errors, onChange }) { // dibuj
               placeholder="TarjetaHabiente"
               style={inputStyle}
             />
-            {errors.cardName && <small style={{ color: 'var(--danger)' }}>{errors.cardName}</small>} //  validaciones
+            {errors.cardName && <small style={{ color: 'var(--danger)' }}>{errors.cardName}</small>} 
           </div>
 
           <div>
@@ -112,7 +112,7 @@ export default function PaymentFormFields({ form, errors, onChange }) { // dibuj
               placeholder="4000 1234 5678 9010"
               style={inputStyle}
             />
-            {errors.cardNumber && <small style={{ color: 'var(--danger)' }}>{errors.cardNumber}</small>} //validaciones
+            {errors.cardNumber && <small style={{ color: 'var(--danger)' }}>{errors.cardNumber}</small>} 
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
@@ -129,7 +129,7 @@ export default function PaymentFormFields({ form, errors, onChange }) { // dibuj
                 placeholder="MM/AA"
                 style={inputStyle}
               />
-              {errors.expiry && <small style={{ color: 'var(--danger)' }}>{errors.expiry}</small>} //validaciones
+              {errors.expiry && <small style={{ color: 'var(--danger)' }}>{errors.expiry}</small>} 
             </div>
 
             <div>
@@ -145,7 +145,7 @@ export default function PaymentFormFields({ form, errors, onChange }) { // dibuj
                 placeholder="***"
                 style={inputStyle}
               />
-              {errors.cvv && <small style={{ color: 'var(--danger)' }}>{errors.cvv}</small>} //validaciones
+              {errors.cvv && <small style={{ color: 'var(--danger)' }}>{errors.cvv}</small>} 
             </div>
           </div>
         </div>

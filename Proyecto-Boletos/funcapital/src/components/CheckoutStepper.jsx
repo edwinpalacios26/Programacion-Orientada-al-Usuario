@@ -43,7 +43,7 @@ export default function CheckoutStepper({ currentStep }) {
               }}
             >
               {isCompleted ? '✓ ' : `${step.num}. `}
-              {step.label} //poner el label del paso
+              {step.label} 
             </li>
           );
         })}
